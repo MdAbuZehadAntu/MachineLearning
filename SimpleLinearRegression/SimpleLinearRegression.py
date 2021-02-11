@@ -22,20 +22,22 @@ y_pred=linreg.predict(X_test)
 
 
 diff=y_pred-y_test
-diff=diff.reshape(-1,1)
+print(diff.shape)
+# quit()
+diff=diff.reshape(diff.shape[0],1)
 print(diff)
 
 print()
 print(linreg.predict([[7.5]])[0])
 
-
-# plt.scatter(X_train,y_train,color="blue")
 #
-# plt.plot(X_train,linreg.predict(X_train),color="red")
-# plt.show()
-# plt.scatter(X_test,y_test,color="black")
-# plt.show()
-# plt.scatter(X_test,linreg.predict(X_test),color="red")
-# plt.show()
+plt.scatter(X_train,y_train,color="blue")
+
+plt.plot(X_train,linreg.predict(X_train),color="red")
+plt.show()
+plt.scatter(X_test,y_test,color="black")
+
+plt.plot(X_test,linreg.predict(X_test),color="red")
+plt.show()
 
 
