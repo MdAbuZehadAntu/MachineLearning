@@ -3,6 +3,7 @@ import pandas as pd
 
 data = pd.read_csv("50_Startups.csv")
 
+Xt = data.iloc[:,: -1]
 X = data.iloc[:,: -1].values
 y = data.iloc[:, -1].values
 # print(type(X))
@@ -41,6 +42,7 @@ X_opt = np.array(X[:, index], dtype=float)
 regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
 
 # print(regressor_OLS.summary())
+# quit()
 index.remove(2)
 # print(index)
 

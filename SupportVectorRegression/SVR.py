@@ -24,8 +24,6 @@ plt.show()
 X_grid=np.arange(min(X),max(X),0.01)
 X_grid=X_grid.reshape(len(X_grid),1)
 
-plt.scatter(X,y,color="Blue")
-plt.plot(X_grid,svr.predict(X_grid),color="red")
-plt.show(
-    
-)
+plt.scatter(sc_x.inverse_transform(X), sc_y.inverse_transform(y),color="Blue")
+plt.plot(sc_x.inverse_transform(X), sc_y.inverse_transform(svr.predict(X)),color="red")
+plt.show()
